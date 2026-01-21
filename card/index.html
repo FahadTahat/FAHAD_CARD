@@ -2,98 +2,120 @@
 <html lang="en">
 
 <head>
+    <!-- ============================================= -->
+    <!-- قسم الإعدادات الأساسية للصفحة -->
+    <!-- هاد القسم بيحدد المعلومات الأساسية للصفحة -->
+    <!-- ============================================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fahad Tahat - Dark Profile</title>
+
+    <!-- ============================================= -->
+    <!-- قسم استيراد المكتبات الخارجية -->
+    <!-- هون بنستورد كل المكتبات اللي رح نستخدمها بالمشروع -->
+    <!-- ============================================= -->
+    <!-- مكتبة Tailwind CSS: إطار عمل للتصميم بيسهل علينا كتابة الأكواد -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- مكتبة Font Awesome: بتوفرلنا آلاف الأيقونات الجاهزة -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- خط Inter من جوجل: خط عصري ومقروء -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ============================================= -->
+    <!-- قسم التنسيقات المخصصة (CSS) -->
+    <!-- هون بنحط كل التصاميم الخاصة بالموقع -->
+    <!-- ============================================= -->
     <style>
+        /* ===== تنسيق الصفحة بشكل عام ===== */
+        /* هاد بيطبق على كل محتوى الصفحة */
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(180deg, #000000 0%, #1a0033 100%);
-            color: #e2e2e2;
+            font-family: 'Inter', sans-serif; /* استخدام الخط اللي استوردناه */
+            background: linear-gradient(180deg, #000000 0%, #1a0033 100%); /* خلفية متدرجة من الأسود للبنفسجي الغامق */
+            color: #e2e2e2; /* لون النص رمادي فاتح */
         }
 
+        /* ===== تصميم البطاقة الرئيسية ===== */
+        /* البطاقة اللي فيها كل معلومات الملف الشخصي */
         .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.05); /* خلفية شفافة قليلاً عشان نشوف الخلفية من ورا */
+            backdrop-filter: blur(10px); /* تأثير الضبابية (Glass Effect) بيعطي مظهر زجاجي */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* حدود بيضاء شفافة */
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); /* ظل بيعطي عمق للبطاقة */
+            transition: 0.3s; /* سلاسة في الحركة لما نمرر الماوس */
         }
 
+        /* تأثير لما نمرر الماوس على البطاقة */
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+            transform: translateY(-5px); /* البطاقة بترتفع للأعلى شوي */
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6); /* الظل بيكبر */
         }
 
+        /* ===== تصميم صورة البروفايل ===== */
         .profile-img {
-            border: 3px solid #3b82f6;
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
-            transition: 0.3s;
-            overflow: hidden;
+            border: 3px solid #3b82f6; /* إطار أزرق حول الصورة */
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.5); /* توهج أزرق حول الصورة */
+            transition: 0.3s; /* سلاسة بالحركة */
+            overflow: hidden; /* إخفاء أي جزء بيطلع برا الحدود */
         }
 
+        /* الصورة نفسها جوا الإطار */
         .profile-img img {
-            transform: scale(1.1);
+            transform: scale(1.1); /* تكبير الصورة شوي عشان تملي الإطار */
             transition: 0.3s;
         }
 
+        /* لما نمرر الماوس على الصورة */
         .profile-img:hover {
-            transform: scale(1.05);
+            transform: scale(1.05); /* تكبير الصورة مع الإطار */
         }
 
+        /* ===== تصميم أزرار السوشيال ميديا ===== */
         .social-btn {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(5px);
-            color: #f5f2ed;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.03); /* خلفية شفافة جداً */
+            backdrop-filter: blur(5px); /* ضبابية خفيفة */
+            color: #f5f2ed; /* لون النص */
+            border: 1px solid rgba(255, 255, 255, 0.05); /* حدود شفافة */
+            transition: all 0.3s ease; /* سلاسة بكل التأثيرات */
             position: relative;
             overflow: hidden;
         }
 
+        /* تأثير لما نمرر الماوس على الزر */
         .social-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #3b82f6;
-            box-shadow: 0 3px 15px rgba(59, 130, 246, 0.2);
-            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.1); /* الخلفية بتصير أوضح */
+            border-color: #3b82f6; /* الحدود بتصير زرقا */
+            box-shadow: 0 3px 15px rgba(59, 130, 246, 0.2); /* ظل أزرق */
+            transform: translateY(-2px); /* الزر بيرتفع شوي */
         }
 
+        /* ===== أنيميشن الظهور التدريجي ===== */
+        /* العناصر بتظهر من تحت لفوق */
         @keyframes fadeInUp {
             from {
-                opacity: 0;
-                transform: translateY(20px);
+                opacity: 0; /* شفافة بالبداية */
+                transform: translateY(20px); /* موقعها تحت */
             }
-
             to {
-                opacity: 1;
-                transform: translateY(0);
+                opacity: 1; /* واضحة بالنهاية */
+                transform: translateY(0); /* بمكانها الطبيعي */
             }
         }
 
+        /* كلاس بيطبق الأنيميشن */
         .fade-in {
             animation: fadeInUp 0.8s ease-out forwards;
             opacity: 0;
         }
 
-        .delay-1 {
-            animation-delay: 0.2s;
-        }
+        /* تأخيرات مختلفة للعناصر عشان يظهروا بالتدريج */
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
 
-        .delay-2 {
-            animation-delay: 0.4s;
-        }
-
-        .delay-3 {
-            animation-delay: 0.6s;
-        }
-
-        .delay-4 {
-            animation-delay: 0.8s;
-        }
-
+        /* ===== زر "اعرف أكثر" ===== */
         .more-btn {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -109,20 +131,22 @@
             transform: translateY(-2px);
         }
 
-        /* Custom Cursor */
+        /* ===== شكل الماوس المخصص ===== */
+        /* دائرة ملونة بتتبع حركة الماوس */
         .custom-cursor {
-            position: fixed;
+            position: fixed; /* ثابت بالشاشة */
             width: 20px;
             height: 20px;
-            background: linear-gradient(135deg, #3b82f6, #ec4899);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
+            background: linear-gradient(135deg, #3b82f6, #ec4899); /* لون متدرج */
+            border-radius: 50%; /* دائرية */
+            pointer-events: none; /* ما بتتفاعل مع الضغطات */
+            z-index: 9999; /* فوق كل شي */
             transform: translate(-50%, -50%);
             transition: transform 0.1s ease;
             opacity: 0.8;
         }
 
+        /* أثر الماوس (دائرة ثانية بتتبع الأولى بتأخير بسيط) */
         .cursor-trail {
             position: fixed;
             width: 8px;
@@ -132,53 +156,54 @@
             pointer-events: none;
             z-index: 9998;
             transform: translate(-50%, -50%);
-            transition: all 0.15s ease;
+            transition: all 0.15s ease; /* حركة أبطأ عشان تعطي إحساس التتبع */
         }
 
+        /* ===== تنسيق الأرقام بقسم الإحصائيات ===== */
         .counter {
-            font-variant-numeric: tabular-nums;
-            color: #3b82f6;
+            font-variant-numeric: tabular-nums; /* الأرقام بتكون بنفس العرض */
+            color: #3b82f6; /* لون أزرق */
         }
 
-        /* Enhanced Background Effects */
+        /* ===== الخلفية المتحركة ===== */
+        /* تأثيرات دوائر ملونة متحركة بالخلفية */
         .animated-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            /* ثلاث دوائر متدرجة بمواقع مختلفة */
             background: radial-gradient(circle at 20% 50%, rgba(147, 51, 234, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.4) 0%, transparent 50%),
                 radial-gradient(circle at 40% 80%, rgba(124, 58, 237, 0.2) 0%, transparent 50%);
             animation: floatingGlow 12s ease-in-out infinite;
             pointer-events: none;
-            z-index: -2;
+            z-index: -2; /* ورا كل شي */
         }
 
+        /* أنيميشن التوهج الطافي */
         @keyframes floatingGlow {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: translateX(0px) translateY(0px) scale(1);
                 opacity: 0.7;
             }
-
             25% {
                 transform: translateX(20px) translateY(-15px) scale(1.02);
                 opacity: 0.8;
             }
-
             50% {
                 transform: translateX(-15px) translateY(10px) scale(1.01);
                 opacity: 0.7;
             }
-
             75% {
                 transform: translateX(10px) translateY(-20px) scale(1.01);
                 opacity: 0.8;
             }
         }
 
+        /* ===== الكرات المتوهجة ===== */
+        /* كرات ملونة بتتحرك ببطء بالخلفية */
         .glowing-orb {
             position: fixed;
             width: 200px;
@@ -190,25 +215,23 @@
             z-index: -1;
         }
 
+        /* أنيميشن حركة الكرات */
         @keyframes orbFloat {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: translateY(0px) translateX(0px) scale(1);
                 opacity: 0.6;
             }
-
             33% {
                 transform: translateY(-30px) translateX(20px) scale(1.05);
                 opacity: 0.7;
             }
-
             66% {
                 transform: translateY(20px) translateX(-15px) scale(1.02);
                 opacity: 0.5;
             }
         }
 
+        /* ===== حاوية الجزيئات المتحركة ===== */
         .particles {
             position: fixed;
             top: 0;
@@ -219,6 +242,8 @@
             z-index: -1;
         }
 
+        /* ===== الجزيئات الصغيرة ===== */
+        /* نقاط صغيرة بتطلع من تحت لفوق */
         .particle {
             position: absolute;
             width: 4px;
@@ -228,6 +253,7 @@
             animation: float 6s infinite linear;
         }
 
+        /* جزيئات خاصة بحجم أكبر ولون مختلف */
         .particle.special {
             background: rgba(236, 72, 153, 0.8);
             width: 6px;
@@ -235,41 +261,37 @@
             animation: floatSpecial 8s infinite linear;
         }
 
+        /* أنيميشن طيران الجزيئات العادية */
         @keyframes float {
             0% {
                 transform: translateY(100vh) rotate(0deg);
                 opacity: 0;
             }
-
             10% {
                 opacity: 1;
             }
-
             90% {
                 opacity: 1;
             }
-
             100% {
                 transform: translateY(-100px) rotate(360deg);
                 opacity: 0;
             }
         }
 
+        /* أنيميشن طيران الجزيئات الخاصة */
         @keyframes floatSpecial {
             0% {
                 transform: translateY(100vh) rotate(0deg) scale(1);
                 opacity: 0;
             }
-
             10% {
                 opacity: 1;
             }
-
             50% {
                 transform: translateY(50vh) rotate(180deg) scale(1.5);
                 opacity: 1;
             }
-
             100% {
                 transform: translateY(-100px) rotate(360deg) scale(0.5);
                 opacity: 0;
@@ -279,39 +301,58 @@
 </head>
 
 <body class="flex items-center justify-center min-h-screen p-6">
-    <!-- Background Effects -->
+    <!-- ============================================= -->
+    <!-- قسم التأثيرات الخلفية -->
+    <!-- كل العناصر البصرية اللي بالخلفية -->
+    <!-- ============================================= -->
     <div class="animated-bg"></div>
     <div class="particles"></div>
+    <!-- ثلاث كرات متوهجة بمواقع مختلفة مع تأخيرات بالأنيميشن -->
     <div class="glowing-orb" style="top: 10%; left: 10%;"></div>
     <div class="glowing-orb" style="top: 60%; right: 15%; animation-delay: 2s;"></div>
     <div class="glowing-orb" style="bottom: 20%; left: 20%; animation-delay: 4s;"></div>
 
-    <!-- Custom Cursor -->
+    <!-- ============================================= -->
+    <!-- شكل الماوس المخصص -->
+    <!-- الدوائر اللي بتتبع حركة الماوس -->
+    <!-- ============================================= -->
     <div class="custom-cursor"></div>
     <div class="cursor-trail"></div>
 
+    <!-- ============================================= -->
+    <!-- البطاقة الرئيسية -->
+    <!-- كل محتوى الملف الشخصي موجود هون -->
+    <!-- ============================================= -->
     <div class="card max-w-md w-full rounded-3xl overflow-hidden relative z-10 fade-in">
 
-        <!-- Header -->
+        <!-- ============================================= -->
+        <!-- قسم الهيدر (الرأس) -->
+        <!-- فيه الصورة الشخصية والاسم ومؤشر الحالة -->
+        <!-- ============================================= -->
         <div class="px-8 py-6 text-center relative">
-            <!-- Online -->
+            <!-- مؤشر الحالة (أونلاين/أوفلاين) -->
             <div class="absolute top-4 right-4 flex items-center space-x-2 fade-in delay-1">
                 <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
                 <span class="text-xs text-gray-400 font-medium">Offline</span>
             </div>
 
-            <!-- Profile Image -->
+            <!-- صورة البروفايل -->
             <div class="profile-img w-28 h-28 rounded-full mx-auto mb-4 overflow-hidden fade-in delay-1">
                 <img src="image-Photoroom.png?v=2" alt="Profile" class="w-full h-full object-cover">
             </div>
 
+            <!-- معلومات الملف الشخصي الأساسية -->
             <h1 class="text-2xl font-bold mb-1 text-white fade-in delay-2">Fahad Tahat</h1>
             <p class="text-gray-400 mb-2 fade-in delay-2">@Workfahad498@gmail.com</p>
             <p class="text-sm text-gray-500 fade-in delay-2">Dev</p>
         </div>
 
-        <!-- Stats -->
+        <!-- ============================================= -->
+        <!-- قسم الإحصائيات والمحتوى الرئيسي -->
+        <!-- الأرقام، النبذة، والأزرار -->
+        <!-- ============================================= -->
         <div class="px-8 py-6 bg-black">
+            <!-- الأرقام الإحصائية (متابعين، متابَعين، منشورات) -->
             <div class="grid grid-cols-3 gap-4 mb-6 fade-in delay-3">
                 <div class="text-center p-3 rounded-xl bg-gray-900">
                     <div class="counter text-xl font-bold mb-1" data-target="60">0</div>
@@ -327,40 +368,47 @@
                 </div>
             </div>
 
-            <!-- Bio -->
+            <!-- النبذة التعريفية -->
             <div class="text-center mb-4 p-4 bg-gray-900 rounded-2xl">
                 <p class="text-gray-300 text-sm leading-relaxed">
                     : لو حابب تعرف أكثر عني
                 </p>
             </div>
 
-            <!-- More Button -->
+            <!-- زر الانتقال للموقع الشخصي -->
             <div class="text-center mb-6">
                 <a href="https://fahad-website-grg.vercel.app/" target="_blank" class="more-btn py-2 px-6 rounded-xl inline-block font-medium">
                     اعرف أكثر
                 </a>
             </div>
 
-            <!-- Social Buttons -->
+            <!-- ============================================= -->
+            <!-- أزرار وسائل التواصل الاجتماعي -->
+            <!-- كل زر بيوديك لحساب معين -->
+            <!-- ============================================= -->
             <div class="space-y-3">
+                <!-- زر انستقرام -->
                 <a href="https://instagram.com/4if_01" target="_blank"
                     class="social-btn w-full py-3 px-6 rounded-xl font-medium flex items-center justify-center space-x-2">
                     <i class="fab fa-instagram"></i>
                     <span>Instagram</span>
                 </a>
 
+                <!-- زر لينكد إن -->
                 <a href="https://www.linkedin.com/in/fahad-tahat-8726192a2/" target="_blank"
                     class="social-btn w-full py-3 px-6 rounded-xl font-medium flex items-center justify-center space-x-2">
                     <i class="fab fa-linkedin"></i>
                     <span>Linkedin</span>
                 </a>
 
+                <!-- زر يوتيوب -->
                 <a href="https://www.youtube.com/@FAHAD_TAHAT" target="_blank"
                     class="social-btn w-full py-3 px-6 rounded-xl font-medium flex items-center justify-center space-x-2">
                     <i class="fab fa-youtube"></i>
                     <span>YouTube</span>
                 </a>
 
+                <!-- زر جيت هب -->
                 <a href="https://github.com/FahadTahat" target="_blank"
                     class="social-btn w-full py-3 px-6 rounded-xl font-medium flex items-center justify-center space-x-2">
                     <i class="fab fa-github"></i>
@@ -369,7 +417,10 @@
             </div>
         </div>
 
-        <!-- Footer -->
+        <!-- ============================================= -->
+        <!-- قسم الفوتر (التذييل) -->
+        <!-- رسالة شكر بسيطة -->
+        <!-- ============================================= -->
         <div class="px-8 py-4 text-center bg-gray-900">
             <p class="text-xs text-gray-500">
                 Thanks for checking out my profile
@@ -377,102 +428,134 @@
         </div>
     </div>
 
+    <!-- ============================================= -->
+    <!-- قسم الجافاسكريبت -->
+    <!-- كل الوظائف التفاعلية بالصفحة -->
+    <!-- ============================================= -->
+    
+    <!-- مكتبة VanillaTilt: بتعطي تأثير الميلان الثلاثي الأبعاد للبطاقة -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    
     <script>
-        // Initialize VanillaTilt
+        /* ============================================= */
+        /* تفعيل تأثير الميلان الثلاثي الأبعاد */
+        /* البطاقة بتميل حسب موقع الماوس */
+        /* ============================================= */
         VanillaTilt.init(document.querySelector(".card"), {
-            max: 15,
-            speed: 400,
-            glare: false,
+            max: 15, // أقصى زاوية ميلان
+            speed: 400, // سرعة الحركة
+            glare: false, // تعطيل تأثير اللمعان
             "max-glare": 0,
         });
 
-        // Custom Cursor Logic
+        /* ============================================= */
+        /* وظائف شكل الماوس المخصص */
+        /* الماوس بيتحرك ويتفاعل مع الضغطات */
+        /* ============================================= */
         const cursor = document.querySelector('.custom-cursor');
         const trail = document.querySelector('.cursor-trail');
 
+        // متابعة حركة الماوس
         document.addEventListener('mousemove', (e) => {
+            // الدائرة الرئيسية بتتحرك مباشرة مع الماوس
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
 
+            // الدائرة التابعة بتتحرك بتأخير بسيط (50 ملي ثانية)
             setTimeout(() => {
                 trail.style.left = e.clientX + 'px';
                 trail.style.top = e.clientY + 'px';
             }, 50);
         });
 
+        // لما نضغط بالماوس، الدوائر بتصغر
         document.addEventListener('mousedown', () => {
             cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
             trail.style.transform = 'translate(-50%, -50%) scale(0.8)';
         });
 
+        // لما نرفع الضغطة، الدوائر برجعوا لحجمهم الطبيعي
         document.addEventListener('mouseup', () => {
             cursor.style.transform = 'translate(-50%, -50%) scale(1)';
             trail.style.transform = 'translate(-50%, -50%) scale(1)';
         });
 
-        // Sound Effect
-        // Sound Effect using Web Audio API
+        /* ============================================= */
+        /* نظام الصوت التفاعلي */
+        /* صوت بسيط بيشتغل لما نمرر على العناصر */
+        /* ============================================= */
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
         function playHoverSound() {
+            // تفعيل الصوت إذا كان معطل
             if (audioCtx.state === 'suspended') audioCtx.resume();
 
+            // إنشاء مولد الموجات الصوتية
             const oscillator = audioCtx.createOscillator();
             const gainNode = audioCtx.createGain();
 
-            oscillator.type = 'sine';
-            oscillator.frequency.setValueAtTime(300, audioCtx.currentTime);
-            oscillator.frequency.exponentialRampToValueAtTime(50, audioCtx.currentTime + 0.1);
+            // نوع الموجة والتردد
+            oscillator.type = 'sine'; // موجة جيبية ناعمة
+            oscillator.frequency.setValueAtTime(300, audioCtx.currentTime); // تردد البداية
+            oscillator.frequency.exponentialRampToValueAtTime(50, audioCtx.currentTime + 0.1); // انخفاض تدريجي
 
-            // Volume set to 0.2 for better audibility
+            // ضبط مستوى الصوت
             gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime);
             gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
 
+            // توصيل العناصر وتشغيل الصوت
             oscillator.connect(gainNode);
             gainNode.connect(audioCtx.destination);
 
             oscillator.start();
-            oscillator.stop(audioCtx.currentTime + 0.1);
+            oscillator.stop(audioCtx.currentTime + 0.1); // مدة الصوت 0.1 ثانية
         }
 
-        // Unlock AudioContext on first user interaction
+        // تفعيل الصوت عند أول نقرة (متطلب المتصفحات الحديثة)
         document.addEventListener('click', function () {
             if (audioCtx.state === 'suspended') {
                 audioCtx.resume();
             }
         }, { once: true });
 
-        // Add hover effect to clickable elements
+        /* ============================================= */
+        /* إضافة تأثيرات التمرير للعناصر القابلة للنقر */
+        /* الماوس بيكبر والصوت بيشتغل */
+        /* ============================================= */
         const clickables = document.querySelectorAll('a, button, .card');
         clickables.forEach(el => {
             el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                playHoverSound();
+                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)'; // تكبير الماوس
+                playHoverSound(); // تشغيل الصوت
             });
             el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)'; // إرجاع الحجم الطبيعي
             });
         });
 
-
+        /* ============================================= */
+        /* إنشاء الجزيئات المتحركة */
+        /* 50 جزيء صغير بيتحركوا بالخلفية */
+        /* ============================================= */
         function createParticles() {
             const container = document.querySelector('.particles');
             const particleCount = 50;
-            // ... (rest of particle logic remains same)
-
 
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
+                // 20% من الجزيئات بتكون "خاصة" بحجم ولون مختلف
                 particle.className = `particle ${Math.random() > 0.8 ? 'special' : ''}`;
 
+                // حجم عشوائي لكل جزيء
                 const size = Math.random() * 4 + 2;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
 
+                // موقع عشوائي على الشاشة
                 particle.style.left = `${Math.random() * 100}%`;
                 particle.style.top = `${Math.random() * 100}%`;
 
+                // تأخير وسرعة عشوائية للحركة
                 particle.style.animationDelay = `${Math.random() * 5}s`;
                 particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
                 particle.style.opacity = Math.random() * 0.5 + 0.1;
@@ -480,27 +563,40 @@
                 container.appendChild(particle);
             }
         }
-        createParticles();
+        createParticles(); // تشغيل الدالة
 
+        /* ============================================= */
+        /* أنيميشن عداد الأرقام */
+        /* الأرقام بتزيد تدريجياً من 0 للرقم المطلوب */
+        /* ============================================= */
         function animateCounter(element, target) {
             let current = 0;
-            const increment = target / 60;
+            const increment = target / 60; // تقسيم الرقم على 60 خطوة
+            
+            // مؤقت بيشتغل كل 16 ملي ثانية (حوالي 60 إطار بالثانية)
             const timer = setInterval(() => {
-                current += increment;
+                current += increment; // زيادة الرقم الحالي
+                
+                // لما نوصل للرقم المطلوب، نوقف العداد
                 if (current >= target) {
                     current = target;
                     clearInterval(timer);
                 }
+                
+                // عرض الرقم مع فواصل الآلاف (مثل: 1,000)
                 element.textContent = Math.floor(current).toLocaleString();
             }, 16);
         }
+        
+        /* ============================================= */
+        /* تفعيل العداد لكل الأرقام الإحصائية */
+        /* بعد نص ثانية من تحميل الصفحة */
+        /* ============================================= */
         document.querySelectorAll('.counter').forEach(counter => {
-            const target = parseInt(counter.dataset.target);
-            setTimeout(() => animateCounter(counter, target), 500);
+            const target = parseInt(counter.dataset.target); // قراءة الرقم المستهدف
+            setTimeout(() => animateCounter(counter, target), 500); // تأخير نص ثانية قبل البدء
         });
     </script>
 </body>
 
-
 </html>
-
